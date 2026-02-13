@@ -12,6 +12,13 @@ const homeButton = document.getElementById('home-button');
 const helpButton = document.getElementById('help-button');
 const description = document.getElementById('description');
 
+// Mobile control buttons
+const leftBtn = document.getElementById('left-btn');
+const rightBtn = document.getElementById('right-btn');
+const rotateBtn = document.getElementById('rotate-btn');
+const softDropBtn = document.getElementById('soft-drop-btn');
+const hardDropBtn = document.getElementById('hard-drop-btn');
+
 const ROWS = 20;
 const COLS = 10;
 const BLOCK_SIZE = 30;
@@ -312,6 +319,27 @@ canvas.addEventListener('touchend', (e) => {
             }
         }
     }
+});
+
+// Event listeners for mobile control buttons
+leftBtn.addEventListener('click', () => {
+    if (gameRunning) movePiece(-1);
+});
+
+rightBtn.addEventListener('click', () => {
+    if (gameRunning) movePiece(1);
+});
+
+rotateBtn.addEventListener('click', () => {
+    if (gameRunning) rotate(currentPiece, 1);
+});
+
+softDropBtn.addEventListener('click', () => {
+    if (gameRunning && !collide(currentPiece, board, 0, 1)) currentPiece.y++;
+});
+
+hardDropBtn.addEventListener('click', () => {
+    if (gameRunning) dropPiece();
 });
 
 // Event listeners for homescreen
