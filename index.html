@@ -15,7 +15,7 @@
             <p>Controls:</p>
             <ul>
                 <li>Desktop: Arrow Keys or WASD (A/D for left/right, S for down, W for rotate clockwise, Z for counter-clockwise, Space for hard drop)</li>
-                <li>Mobile: Tap left/right sides of the game board to move, tap center to rotate, swipe down to soft drop, double-tap for hard drop.</li>
+                <li>Mobile: Use on-screen buttons below the game board or touch gestures (tap sides to move, center to rotate, swipe down to soft drop, double-tap for hard drop)</li>
             </ul>
             <p>Select a difficulty below to start!</p>
         </div>
@@ -32,6 +32,13 @@
         <div id="score">Score: 0</div>
         <div id="next-piece">Next:</div>
         <canvas id="tetris-canvas" width="300" height="600"></canvas>
+        <div id="mobile-controls">
+            <button id="left-btn">←</button>
+            <button id="rotate-btn">↻</button>
+            <button id="right-btn">→</button>
+            <button id="soft-drop-btn">↓</button>
+            <button id="hard-drop-btn">⯆</button>
+        </div>
     </div>
     <script src="tetris.js"></script>
 </body>
